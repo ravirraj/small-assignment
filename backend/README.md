@@ -206,36 +206,3 @@ The seed script uses batched inserts (5,000 rows per batch) with `@faker-js/fake
 npm run db:seed   # Inserts 200,000 products
 ```
 
-## Deployment
-
-### Render + Neon
-
-1. **Create a Neon database** at [neon.tech](https://neon.tech) and copy the connection string.
-
-2. **Create a Render Web Service:**
-   - Build command: `npm install`
-   - Start command: `npm start`
-   - Environment variables:
-     - `DATABASE_URL`: Your Neon connection string
-     - `NODE_ENV`: `production`
-
-3. **Run setup on first deploy** (add to Render startup command):
-   ```bash
-   node scripts/setup-db.js && node scripts/seed.js && node src/server.js
-   ```
-
-### Docker (optional)
-
-```dockerfile
-FROM node:20-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --omit=dev
-COPY . .
-EXPOSE 3000
-CMD ["sh", "-c", "node scripts/setup-db.js && npm run db:seed && node src/server.js"]
-```
-
-## License
-
-MIT

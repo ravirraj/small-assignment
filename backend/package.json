@@ -11,11 +11,10 @@
     "db:reset": "node scripts/setup-db.js && node scripts/seed.js"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "pg": "^8.13.1"
-  },
-  "devDependencies": {
-    "@faker-js/faker": "^9.3.0"
   }
 }

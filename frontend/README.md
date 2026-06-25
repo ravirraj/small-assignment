@@ -19,16 +19,15 @@ npm install
 npm run dev
 ```
 
-The backend must be running on port 3000 before starting the frontend.
+Ensure the backend is running on port 3000 before starting the frontend.
 
 ## Features
 
-- Browse 200,000 products in a responsive grid
+- Browse products in a responsive grid
 - Filter by category via dropdown
 - Cursor-based "Load More" pagination
-- Products load automatically on page visit
 - Loading spinner and error states with retry
-- Snapshot-aware for consistent browsing
+- Snapshot-aware (passes snapshot from API responses for consistent browsing)
 
 ## Project Structure
 
@@ -51,7 +50,7 @@ src/
 
 ## API Integration
 
-Communicates with `GET /api/products` via Vite's dev server proxy.
+The frontend communicates with `GET /api/products` via Vite's dev server proxy.
 
 Query parameters: `limit`, `cursor`, `category`, `snapshot`.
 

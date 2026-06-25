@@ -97,21 +97,6 @@ CREATE INDEX idx_products_category_updated_id
 
 Covers filtering, ordering, and keyset pagination in a single index.
 
-## Deployment
-
-### Backend (Render + Neon)
-
-1. Create a Neon database and copy the connection string
-2. Create a Render Web Service with:
-   - Build: `npm install`
-   - Start: `npm start`
-   - Env: `DATABASE_URL=<your-neon-url>`, `NODE_ENV=production`
-3. First deploy runs: `node scripts/setup-db.js && npm run db:seed && node src/server.js`
-
-### Frontend (Vercel / Netlify)
-
-1. Set build command to `npm run build` and output dir to `dist`
-2. Set environment variable `VITE_API_URL` if backend is on a different domain
 
 ## License
 
